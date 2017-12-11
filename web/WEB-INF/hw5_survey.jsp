@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -248,6 +249,7 @@
             $(document).ready(function() {
                 $( document ).tooltip();
                 pageSetup();
+                $("#txt_username").focus();
             });
         </script>
     </head>
@@ -267,9 +269,9 @@
         <h1 class="top_header">George Mason University Department of Computer Science Prospective Student Survey</h1>
         <h3 class="welcome" id="welcome_header">Welcome</h3>
         <h2>Please help us better understand our prospect Computer Science students by completing this survey</h2>
-        <form action="surveysubmit" name ="surveyForm" method="post" autocomplete="on" onsubmit="return validateSurveyForm()">
-            <input type="hidden" name="action" value="store-survey">
-            <input type="hidden" name="seqId" value="-1">
+        <form action="surveysubmit" name="surveyForm" method="post" autocomplete="on" onsubmit="return validateSurveyForm()">
+            <s:hidden name="action" value="store-survey"/>
+            <s:hidden name="studentBean.studentSeqId" value="-1"/>
         <table align="center" width="100%">
             <tr>
                 <td align="left">Username:</td>
@@ -277,9 +279,9 @@
                 <td align="left">Name (First and Last):</td>
             </tr>
             <tr>
-                <td align="left"><input type="text" name="username"  id="txt_username"  size="20"  autocomplete="on" maxlength="20" autofocus="autofocus" required /></td>
-                <td align="left"><input required type="email" name="email" id="txt_email" size="30"  autocomplete="on" maxlength="50" placeholder="name@domain-name.com" /></td>
-                <td align="left"><input required type="text" name="namefirstlast" id="txt_namefirstlast" size="30"  autocomplete="on" maxlength="50"/></td>
+                <td align="left"><input type="text" name="studentBean.username"  id="txt_username"  size="20"  autocomplete="on" maxlength="20" autofocus="autofocus" required /></td>
+                <td align="left"><input required type="email" name="studentBean.email" id="txt_email" size="30"  autocomplete="on" maxlength="50" placeholder="name@domain-name.com" /></td>
+                <td align="left"><input required type="text" name="studentBean.nameFirstlast" id="txt_namefirstlast" size="30"  autocomplete="on" maxlength="50"/></td>
             </tr>
             <tr>
                 <td align="left">Street Address:</td>
@@ -287,9 +289,9 @@
                 <td align="left">State:</td>
             </tr>
             <tr>
-                <td align="left"><input type="text" name="streetaddress" id="txt_streetaddress" size="50"  autocomplete="on" maxlength="50"/></td>
-                <td align="left"><input type="text" name="city"  id="sp_city"  size="20" autocomplete="on" maxlength="20" required /></td>
-                <td align="left"><input type="text" name="state"  id="sp_state" size="20" autocomplete="on" maxlength="20" required /></td>
+                <td align="left"><input type="text" name="studentBean.streetAddress" id="txt_streetaddress" size="50"  autocomplete="on" maxlength="50"/></td>
+                <td align="left"><input type="text" name="studentBean.city"  id="sp_city"  size="20" autocomplete="on" maxlength="20" required /></td>
+                <td align="left"><input type="text" name="studentBean.state"  id="sp_state" size="20" autocomplete="on" maxlength="20" required /></td>
             </tr>
             <tr>
                 <td align="left">Zip:</td>
@@ -297,9 +299,9 @@
                 <td align="left">Home Page:</td>
             </tr>
             <tr>
-                <td align="left"><input type="text" name="zipcode" id="txt_zipcode" pattern="\(\[0-9]{5}\)" placeholder="#####" size="10"  autocomplete="on" maxlength="5" onblur="zipcodeChange();"/></td>
-                <td align="left"><input type="tel" name="phonenumber" id="txt_phonenumber" pattern="\(\d{3}\)+\d{3}-\d{4}" placeholder="(###) ###-####"/></td>
-                <td align="left"><input type="url" id="txt_homepageurl" name="homepageurl"  placeholder="http://domain-name.com" size="30"  autocomplete="on" maxlength="50"/></td>
+                <td align="left"><input type="text" name="studentBean.zip" id="txt_zipcode" pattern="\(\[0-9]{5}\)" placeholder="#####" size="10"  autocomplete="on" maxlength="5" onblur="zipcodeChange();"/></td>
+                <td align="left"><input type="tel" name="studentBean.phoneNumber" id="txt_phonenumber" pattern="\(\d{3}\)+\d{3}-\d{4}" placeholder="(###) ###-####"/></td>
+                <td align="left"><input type="url" id="txt_homepageurl" name="studentBean.homepageUrl"  placeholder="http://domain-name.com" size="30"  autocomplete="on" maxlength="50"/></td>
             </tr>
             <tr>
                 <td align="left">Date of Survey:</td>
@@ -307,8 +309,8 @@
                 <td align="left">High school graduation year:</td>
             </tr>
             <tr>
-                <td align="left"><input type="date" id="txt_surveydate" name="surveydate" pattern="yyyy-mm-dd" placeholder="yyyy-mm-dd"/></td>
-                <td align="left"><input type="text" name="hsgradmonth" id="txt_hsgradmonth" placeholder="Select a Month" list="months"/>
+                <td align="left"><input type="date" id="txt_surveydate" name="studentBean.surveyDate" pattern="yyyy-mm-dd" placeholder="yyyy-mm-dd"/></td>
+                <td align="left"><input type="text" name="studentBean.hsGradMonth" id="txt_hsgradmonth" placeholder="Select a Month" list="months"/>
                     <datalist id="months">
                         <option value="January"></option>
                         <option value="February"></option>
@@ -323,13 +325,13 @@
                         <option value="November"></option>
                         <option value="December"></option>                        
                     </datalist></td>
-                <td align="left"><input type="text" name="gradyear" id="txt_gradyear" size="10" maxlength="4" placeholder="Year YYYY" pattern="[1,2][0-9][0-9][0-9]" /></td>
+                <td align="left"><input type="text" name="studentBean.hsGradYear" id="txt_gradyear" size="10" maxlength="4" placeholder="Year YYYY" pattern="[1,2][0-9][0-9][0-9]" /></td>
             </tr>
             <tr>
                 <td align="left" colspan="3">Student ID:</td>
             </tr>
             <tr>
-                <td align="left" colspan="3"><input type="text" name="studentid"  id="txt_studentid"  size="20"  autocomplete="on" maxlength="20" autofocus="autofocus" required /></td>
+                <td align="left" colspan="3"><input type="text" name="studentBean.studentId"  id="txt_studentid"  size="20"  autocomplete="on" maxlength="20" autofocus="autofocus" required /></td>
             </tr>
         </table>
         <br />
@@ -341,21 +343,21 @@
             </tr>
             <tr>
                 <td align="left" class="survey_option">
-                      <input type="checkbox" name="campuslike" id="students" value="students" />Students <br />
-                      <input type="checkbox" name="campuslike" id="location" value="location" />Location<br />
-                      <input type="checkbox" name="campuslike" id="campus" value="campus" />Campus<br />
-                      <input type="checkbox" name="campuslike" id="atmosphere" value="atmosphere" />Atmosphere<br />
-                      <input type="checkbox" name="campuslike" id="dormrooms" value="dormrooms" />Dorm Rooms<br />
-                      <input type="checkbox" name="campuslike" id="sports" value="sports" />Sports<br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="students" value="students" />Students <br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="location" value="location" />Location<br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="campus" value="campus" />Campus<br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="atmosphere" value="atmosphere" />Atmosphere<br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="dormrooms" value="dormrooms" />Dorm Rooms<br />
+                      <input type="checkbox" name="studentBean.campusLikes" id="sports" value="sports" />Sports<br />
                 </td>
                 <td align="left" class="survey_option">
-                      <input type="radio" name="interestind" id="friends" value="friends" />Friends<br />
-                      <input type="radio" name="interestind" id="television" value="television" />Television<br />
-                      <input type="radio" name="interestind" id="internet" value="internet" />Internet<br />
-                      <input type="radio" name="interestind" id="other" value="other" />Other<br />
+                      <input type="radio" name="studentBean.interestInd" id="friends" value="friends" />Friends<br />
+                      <input type="radio" name="studentBean.interestInd" id="television" value="television" />Television<br />
+                      <input type="radio" name="studentBean.interestInd" id="internet" value="internet" />Internet<br />
+                      <input type="radio" name="studentBean.interestInd" id="other" value="other" />Other<br />
                 </td>
                 <td align="left" class="survey_option">
-                    <select name="likelyrecommend" id="sel_likelyrecommend">
+                    <select name="studentBean.recLikely" id="sel_likelyrecommend">
                         <option value="verylikely">Very Likely</option>
                         <option value="likely">Likely</option>
                         <option value="unlikely">Unlikely</option>

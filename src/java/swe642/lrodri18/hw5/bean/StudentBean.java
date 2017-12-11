@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class StudentBean {
 
-    private int studentSeqId = -1;
+    private int    studentSeqId = -1;
     private String studentId = null;
     private String username = null;
     private String email = null;
@@ -27,7 +27,7 @@ public class StudentBean {
     private String homepageUrl = null;
     private String hsGradYear = null;
     private String hsGradMonth = null;
-    private String campusLikes = null;
+    private String[] campusLikes = null;
     private String interestInd = null;
     private String recLikely = null;
     private String movieTitle = null;
@@ -216,19 +216,45 @@ public class StudentBean {
         this.hsGradMonth = hsGradMonth;
     }
 
-    public String getCampusLikes() {
+    public String[] getCampusLikes() {
         return campusLikes;
     }
+    
+    public String getCampusLikesAsStr() {
+      StringBuffer campusLikeData = new StringBuffer("");
+      if( campusLikes != null ){
+        int index = 0;
+        for (String like : campusLikes) {
+          index++;
+          campusLikeData.append(like);
+          if (index < campusLikes.length) {
+            campusLikeData.append(",");
+          }
+        } 
+      }
+      return campusLikeData.toString();
+    }
+    
+    public void setCampusLikesFromStr(String campusLikesData){
+        if( campusLikesData != null && !campusLikesData.trim().equals("")) {
+          this.campusLikes = campusLikesData.split(",");
+        } else {
+          String[] likes = { "" };
+          this.campusLikes = likes;
+        }
+    }
 
-    public void setCampusLikes(String campusLikes) {
+    public void setCampusLikes(String[] campusLikes) {
+        /*
         if( campusLikes != null && !campusLikes.trim().equals("")) {
             campusLikes = campusLikes.trim().toUpperCase();
         } else {
             campusLikes = "";
         }
+        */
         this.campusLikes = campusLikes;
     }
-
+    
     public String getInterestInd() {
         return interestInd;
     }
@@ -362,8 +388,21 @@ public class StudentBean {
 
     @Override
     public String toString() {
-        // TODO Implement this method
-        return "[StudentDAO] {student_seq_id:" + this.studentSeqId + ", student_id:" + this.studentId + "}";
+        StringBuilder sbf = new StringBuilder();
+        sbf.append("[StudentDAO] {student_seq_id:" + this.studentSeqId);
+        sbf.append(", student_id:" + this.studentId);
+        sbf.append(", username:" + this.username);
+        sbf.append(", email:" + this.email);
+        sbf.append(", nameFirstlast:" + this.nameFirstlast);
+        sbf.append(", streetAddress:" + this.streetAddress);
+        sbf.append(", city:" + this.city);
+        sbf.append(", state:" + this.state);
+        sbf.append(", zip:" + this.zip);
+        sbf.append(", surveyDate:" + this.surveyDate);
+        sbf.append(", campusLikes:" + this.getCampusLikesAsStr());
+        sbf.append("}");
+        
+        return sbf.toString();
     }
 
 }

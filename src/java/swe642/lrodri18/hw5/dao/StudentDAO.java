@@ -106,7 +106,7 @@ public class StudentDAO {
         o.setSurveyDate(rs.getString("survey_date"));
         o.setHsGradYear(rs.getString("hs_grad_year"));
         o.setHsGradYear(rs.getString("hs_grad_month"));
-        o.setCampusLikes(rs.getString("liked_best"));
+        o.setCampusLikesFromStr(rs.getString("liked_best"));
         o.setInterestInd(rs.getString("interest_ind"));
         o.setRecLikely(rs.getString("rec_likely"));
         o.setComments(rs.getString("comments"));        
@@ -162,7 +162,7 @@ public class StudentDAO {
         o.setSurveyDate(rs.getString("survey_date"));
         o.setHsGradYear(rs.getString("hs_grad_year"));
         o.setHsGradYear(rs.getString("hs_grad_month"));
-        o.setCampusLikes(rs.getString("liked_best"));
+        o.setCampusLikesFromStr(rs.getString("liked_best"));
         o.setInterestInd(rs.getString("interest_ind"));
         o.setRecLikely(rs.getString("rec_likely"));
         o.setComments(rs.getString("comments"));
@@ -225,7 +225,7 @@ public class StudentDAO {
           ps.setString(12, newData.getSurveyDate());
           ps.setString(13, newData.getHsGradYear());
           ps.setString(14, newData.getHsGradMonth());
-          ps.setString(15, newData.getCampusLikes());
+          ps.setString(15, newData.getCampusLikesAsStr());
           ps.setString(16, newData.getInterestInd());
           ps.setString(17, newData.getRecLikely());
           ps.setString(18, newData.getComments());
