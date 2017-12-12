@@ -10,6 +10,7 @@ lib/javaee-endorsed-api-7.0/jsr181-api.jar
 lib/nblibraries.properties
 lib/hamcrest-2
 lib/junit_4-2
+lib/mysql-connector-java-5.1.44-bin.jar
 /dist/
 /build/
 /web/META-INF/context.xml
