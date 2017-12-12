@@ -22,11 +22,7 @@ public class DataBean {
     this.dataFieldList = dataFieldList;
     this.parseDataFieldList();
   }
-
-  public void setData(String dataFieldList) {
-    this.dataFieldList = dataFieldList;
-  }
-  
+ 
   public double getMeanValue() {
     return this.meanValue;
   }
@@ -37,6 +33,11 @@ public class DataBean {
   
   public String getDataFieldList() {
     return this.dataFieldList;
+  }
+  
+  public void setDataFieldList(String dataFieldList) {
+    this.dataFieldList = dataFieldList;
+    this.parseDataFieldList();
   }
 
   public void parseDataFieldList() {
@@ -60,4 +61,18 @@ public class DataBean {
       }
     }
   }
+  
+    @Override
+    public String toString() {
+        StringBuilder sbf = new StringBuilder();
+        sbf.append("[DataBean] {dataFieldList:");
+        sbf.append(this.dataFieldList);
+        sbf.append(", meanValue:");
+        sbf.append(this.meanValue);
+        sbf.append(", standardDeviation:");
+        sbf.append(this.standardDeviation);
+        sbf.append("}");
+        
+        return sbf.toString();
+    }
 }

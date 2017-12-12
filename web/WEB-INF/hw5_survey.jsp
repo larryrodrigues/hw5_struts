@@ -401,7 +401,7 @@
                     </select>&nbsp;[1 (terrible)... 10 (perfect)]&nbsp;
                     <input type="hidden" name="ratingtstamp" id="hid_ratingtimestamp"/>
                             </td>
-        <td align="left"><input id="avg_max_set" name="avg_max_data" type="text" size="40" placeholder="1,2,3.....N" pattern="^(100|[1-9]|[1-9][0-9])+(,(100|[1-9]|[1-9][0-9])+){9,}$" />&nbsp;<span class="error_text" id="avg_max_error"></span></td>
+        <td align="left"><input id="avg_max_set" name="dataprocBean.dataFieldList" type="text" size="40" placeholder="1,2,3.....N" pattern="^(100|[1-9]|[1-9][0-9])+(,(100|[1-9]|[1-9][0-9])+){9,}$" />&nbsp;<span class="error_text" id="avg_max_error"></span></td>
             </tr>
         </table>
         <table class="comments_table" align="center" width="100%">

@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "s" uri = "/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,22 +13,23 @@
         <p>Please <a href="${pageContext.request.contextPath}/controller">click here</a> to complete the survey again.</p>
         <table class="dataproc_table" align="center" width="100%">
             <tr><th align="center">Mean Value of Data</th><th align="center">Standard Deviation of Data</th></tr>
-            <tr><td align="center">${dataproc.meanValue}</td><td align="center">${dataproc.standardDeviation}</td></tr>
-            <tr><td align="center">Data Set Values:</td><td align="center">${dataproc.dataFieldList}</td></tr>
+            <tr><td align="center">${dataprocBean.meanValue}</td><td align="center">${dataprocBean.standardDeviation}</td></tr>
+            <tr><td align="center">Data Set Values:</td><td align="center">${dataprocBean.dataFieldList}</td></tr>
         </table>
         <table style="border: 1px solid;" width="100%" align="center">
-            <c:forEach var="student" items="${allstudents}">
+            <s:iterator value="allStudentRecs">
+                <s:url value="/studentdetail?id=%{studentSeqId}" var="detail" />
                 <tr>
-                    <td><a href = "<c:url value = "/controller?id=${student.studentSeqId}&action=getstudent"/>">${student.studentId}</a></td>
-                    <td>${student.username}</td>
-                    <td>${student.email}</td>
-                    <td>${student.nameFirstlast}</td>
-                    <td>${student.streetAddress}</td>
-                    <td>${student.city}</td>
-                    <td>${student.state}</td>
-                    <td>${student.zip}</td>
+                    <td><s:a href="%{detail}"><s:property value="studentId"/></s:a></td>
+                    <td><s:property value="username"/></td>
+                    <td><s:property value="email"/></td>
+                    <td><s:property value="nameFirstlast"/></td>
+                    <td><s:property value="streetAddress"/></td>
+                    <td><s:property value="city"/></td>
+                    <td><s:property value="state"/></td>
+                    <td><s:property value="zip"/></td>
                 </tr>
-            </c:forEach>
+            </s:iterator>
         </table>
     </body>
 </html>

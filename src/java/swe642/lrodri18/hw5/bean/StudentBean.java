@@ -389,7 +389,7 @@ public class StudentBean {
     @Override
     public String toString() {
         StringBuilder sbf = new StringBuilder();
-        sbf.append("[StudentDAO] {student_seq_id:" + this.studentSeqId);
+        sbf.append("[StudentBean] {student_seq_id:" + this.studentSeqId);
         sbf.append(", student_id:" + this.studentId);
         sbf.append(", username:" + this.username);
         sbf.append(", email:" + this.email);

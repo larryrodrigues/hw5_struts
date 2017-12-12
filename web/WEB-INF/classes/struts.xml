@@ -19,7 +19,8 @@
             <result name="error">/WEB-INF/error.jsp</result>
         </action>
         <action name="surveysubmit" class="swe642.lrodri18.hw5.action.SurveySubmitAction" method="execute">
-            <result name="success">/WEB-INF/SimpleAcknowledgement.jsp</result>
+            <result name="simple_success">/WEB-INF/SimpleAcknowledgement.jsp</result>
+            <result name="winner_success">/WEB-INF/WinnerAcknowledgement.jsp</result>
             <result name="error">/WEB-INF/error.jsp</result>
         </action>
         <action name="studentdetail" class="swe642.lrodri18.hw5.action.GetStudentDetailAction" method="execute">
