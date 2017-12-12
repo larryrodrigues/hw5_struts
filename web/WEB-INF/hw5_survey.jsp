@@ -369,7 +369,7 @@
             <tr class="movie_rating_row">
                 <th align="left" class="survey_option">Please select a movie title to rate.</th>
                 <th align="left" class="survey_option">Please select a rating for the movie.</th>
-                <th align="left" class="survey_option">Please enter 10 or more comma separated numbers.</th>
+                <th align="left" class="survey_option">Please enter 10 or more comma separated numbers (1..100).</th>
             </tr>
             <tr class="movie_rating_row">
         <td><input type="hidden" name="userid" id="hid_userid" value="1"/>
