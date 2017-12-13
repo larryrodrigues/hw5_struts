@@ -1,7 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Larry Rodrigues
+ * SWE 642 Fall 2017
+ * HW5 Struts
+ * 
+ * Class StudentDAO is used to execute database interactivity 
+ * for student records.
+ * The class uses AppLogUTils to provide better stacktrace information
+ * from SQLException instances.
  */
 package swe642.lrodri18.hw5.dao;
 
@@ -13,10 +18,6 @@ import java.util.ArrayList;
 import swe642.lrodri18.hw5.bean.StudentBean;
 import swe642.lrodri18.hw5.utils.AppLogUtils;
 
-/**
- *
- * @author LRODRIGUES
- */
 public class StudentDAO {
 
   private static synchronized int getNextId() {

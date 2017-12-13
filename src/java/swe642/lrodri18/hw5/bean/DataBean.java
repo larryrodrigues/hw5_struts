@@ -1,3 +1,11 @@
+/**
+ * @author Larry Rodrigues
+ * SWE 642 Fall 2017
+ * HW5 Struts
+ * 
+ * Class DataBean  is used to store mean value data information.
+ * The class uses the methods provided in StdStats to perform statistical calculations.
+ */
 package swe642.lrodri18.hw5.bean;
 
 import swe642.lrodri18.hw5.utils.StdStats;

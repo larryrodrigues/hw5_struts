@@ -20,6 +20,6 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
       <res-auth>Container</res-auth>
   </resource-ref>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>/WEB-INF/hw5_survey.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

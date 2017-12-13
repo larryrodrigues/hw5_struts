@@ -1,3 +1,11 @@
+/**
+ * @author Larry Rodrigues
+ * SWE 642 Fall 2017
+ * HW5 Struts
+ * 
+ * Class DbConnPool is used to execute database connectivity and connection pooling.
+ * The database connection is defined by the jdbc values in context.xml
+ */
 package swe642.lrodri18.hw5.dao;
 
 import java.sql.Connection;

@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Larry Rodrigues
+ * SWE 642 Fall 2017
+ * HW5 Struts
+ * 
+ * Class StudentBean  is used to store student survey data.
  */
 package swe642.lrodri18.hw5.bean;
 
 import java.util.Date;
 
-/**
- *
- * @author LRODRIGUES
- */
 public class StudentBean {
 
     private int    studentSeqId = -1;

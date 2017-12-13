@@ -1,3 +1,11 @@
+/**
+ * @author Larry Rodrigues
+ * SWE 642 Fall 2017
+ * HW5 Struts
+ * 
+ * Class AppLogUtils provide logging mechanism for SQLException instances.
+ */
+
 package swe642.lrodri18.hw5.utils;
 
 import java.sql.SQLException;
